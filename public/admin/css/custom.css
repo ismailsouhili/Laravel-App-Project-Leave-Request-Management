@@ -1,0 +1,23 @@
+.carte-image{
+    width: 100;
+}
+
+.form-select{
+    display: block;
+    width: 100%;
+    padding: .375rem 2.25rem .375rem .75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    font-weight: 400;
+    color: #212529;
+    background-color: #fff;
+    background-repeat: no-repeat;
+    background-position:right .75rem center ;
+    border: 1px solid #cedAda;
+    border-radius: .25rem;
+    
+}
+
+.toggle-class{
+    
+}
