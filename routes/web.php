@@ -32,8 +32,8 @@ use App\Http\Controllers\Auth\RegisterController;
 
 Route::get('/','Auth\LoginController@index');
 
-
 Auth::routes();
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -59,7 +59,9 @@ Route::middleware(['auth'],['isAdmin'])->group(function(){
      // Pour le Rapport
     Route::get('download-rapp', 'Admin\CongesController@downpdf');
 
+    Route::get('adferies','Admin\FrontendController@adferies');
 
+    Route::get('search/{id}','Admin\UsersControler@search');
 });
 
 
@@ -75,5 +77,7 @@ Route::middleware(['auth'],['isAdmin'])->group(function(){
 
 
     Route::get('download/{id}','Admin\CongesController@download');
+
+    Route::get('feries','User\UserDashController@feries');
 
     
