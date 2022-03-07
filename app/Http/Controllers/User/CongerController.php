@@ -9,6 +9,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\File;
 
 use Illuminate\Support\Facades\Auth;
+use Carbon\Carbon;
 
 use Illuminate\Support\Facades\DB;
 
@@ -18,14 +19,17 @@ class CongerController extends Controller
     {
         
         //$conge=Conges::all();
+        
         $id = Auth::user()->id;
         $conge=Conges::where('user_ID',$id)->get();
-        return view('user.conger.index', compact('conge'));
+        //$user = DB::table('holidays')->where('user_ID', Auth::user()->id)->SUM('total_days');
+        return view('user.conger.index',compact('conge') );
     }
 
     public function add()
     {
-        return view('user.conger.add');
+        $user = DB::table('holidays')->where('user_ID', Auth::user()->id)->where('status', '=', 'Accepté')->SUM('total_days');
+        return view('user.conger.add', compact('user'));
     }
 
     public function insert(Request $request)
@@ -47,8 +51,14 @@ class CongerController extends Controller
         $conge->start=$request->input('start'); 
         $conge->end=$request->input('end'); 
         $conge->type=$request->input('type');
+
+        $start = \Carbon\Carbon::parse($request->input('start'));
+        $end = \Carbon\Carbon::parse($request->input('end'));
+        $days = $start->diffInWeekdays($end);
+        $conge->total_days=$days+1;
+
         $conge->save();
-        return redirect('conger')->with('status','Ajouter avec succès');
+        return redirect('conger')->with('status','Votre demande est envoyée avec succès');
     }
 
     public function edit($id)

@@ -13,7 +13,7 @@
                 
 
                   <div class="col-md-6 mb-3">
-                      <label for="">Nome</label>
+                      <label for="">Nom</label>
                       <input type="text" name="name" id="" class="form-control">
                   </div>
 
@@ -29,13 +29,14 @@
 
                   <div class="col-md-6 mb-3">
                     <label for="">Password</label>
-                    <input type="text" name="password" id="" class="form-control ">
+                    <input type="password" name="password" id="" class="form-control ">
                   </div>
 
-                  <div class="col-md-12 mb-3">
+            {{--  <div class="col-md-12 mb-3">
                     <label for="">Conges</label>
                     <input type="text" name="holidays" id="" class="form-control">
                   </div> 
+                  --}}
 
                   <div class="col-md-12 mb-3">
                     <label for="">Debut-Travail</label>

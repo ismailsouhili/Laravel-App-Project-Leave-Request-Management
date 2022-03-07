@@ -9,14 +9,33 @@ use Illuminate\Http\Request;
 use Illuminate\Foundation\Auth\RegistersUsers;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
+use Carbon\Carbon;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Console\Scheduling\Schedule;
+use Illuminate\Foundation\Console\Kernel as ConsoleKernel;
+
+use Carbon\CarbonPeriod;
 
 class UsersControler extends Controller
 {
-    public function index()
-    {
+
+    /**
+     * Define the application's command schedule.
+     *
+     * @param  \Illuminate\Console\Scheduling\Schedule  $schedule
+     * @return void
+     */
+    
+    public function index(Schedule $schedule)
+    { 
+      //  $day = Carbon::now()->format('d');
+
         $users=User::all();
         return view('admin.user.index', compact('users'));
     }
+
+   
 
     public function add()
     {
@@ -31,7 +50,7 @@ class UsersControler extends Controller
         $users->fname=$request->input('fname'); 
         $users->email=$request->input('email'); 
         $users->password=$request->input('password');
-        $users->holidays=$request->input('holidays'); 
+        $users->holidays=0;
         $users->start_work=$request->input('start_work'); 
         $users->salary=$request->input('salary');
         $users->save();
@@ -52,7 +71,10 @@ class UsersControler extends Controller
         $users->fname=$request->input('fname'); 
         $users->email=$request->input('email'); 
         $users->password=$request->input('password');
-        $users->holidays=$request->input('holidays'); 
+
+        $Nbholidays = DB::table('holidays')->where('user_ID', $id)->SUM('total_days');
+        $users->holidays=$Nbholidays;
+
         $users->start_work=$request->input('start_work'); 
         $users->salary=$request->input('salary');
         $users->update();
@@ -66,5 +88,6 @@ class UsersControler extends Controller
         $users->delete();
         return redirect('users')->with('status','Supprimer avec succès');
     }
+ 
 
 }

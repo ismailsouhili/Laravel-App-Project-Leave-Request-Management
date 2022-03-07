@@ -52,6 +52,7 @@ class LoginController extends Controller
     //Second method to Redirect with Message ("STATUS") eg: welcome to dashboard
     protected function authenticated()
     {
+        
         if(Auth::user()->role_as == '1') //1 = Admin Login
         {
             return redirect('dashboard')->with('status','Bienvenue sur votre tableau de bord');

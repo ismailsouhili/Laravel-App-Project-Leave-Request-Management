@@ -12,4 +12,9 @@ class UserDashController extends Controller
     {
         return view('user.index');
     }
+
+    public function feries()
+    {
+        return view('user.feries');
+    }
 }

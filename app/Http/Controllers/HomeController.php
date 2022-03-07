@@ -26,4 +26,9 @@ class HomeController extends Controller
         //return view('home');  
         return redirect('/userdash')->with('status','Successful registration');      
     }
+
+   /* public function compLogin()
+    {
+        return view('google2fa.index');      
+    }*/
 }

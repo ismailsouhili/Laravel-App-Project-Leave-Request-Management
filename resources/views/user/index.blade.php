@@ -8,7 +8,7 @@
         <div id="layoutSidenav_content"> </div>
             <main>
                 <div class="container-fluid px-4">
-                    <h1 class="mt-4">Plateforme des Demandes</h1>
+                    <h1 class="mt-4" style="text-align: center">Bienvenue dans notre système : {{Auth::user()->name}}</h1>
 
                      <ol class="breadcrumb mb-4">
                         <li class="breadcrumb-item active"> 
@@ -20,8 +20,7 @@
                                         <div class="card bg-success text-white mb-4">
                                             <div class="card-body text-center">
 
-                                       <p style='display: inline; font-size: 30px; color: white; font-weight: bold;'>Vous avez réussi à accéder à votre compte</p>
-
+                                       <p style='display: inline; font-size: 30px; color: white; font-weight: bold;'>Votre solde de congés: {{Auth::user()->max_holdiays}} Jours </p>
 
                                            </div>
                                        </div>

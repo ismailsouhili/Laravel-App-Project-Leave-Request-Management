@@ -31,10 +31,12 @@
                     <input type="text" value="{{$users->password}}" name="password" id="" class="form-control">
                   </div>
 
+                 {{--
                   <div class="col-md-6 mb-3">
                     <label for="">Conges</label>
                     <input type="text" value="{{$users->holidays}}" name="holidays" id="" class="form-control">
                   </div>
+                  --}}
 
                   <div class="col-md-12 mb-3">
                     <label for="">Debut Travail</label>

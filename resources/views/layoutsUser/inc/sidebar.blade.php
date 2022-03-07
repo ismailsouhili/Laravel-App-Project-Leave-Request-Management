@@ -18,7 +18,7 @@
 
         <li class="nav-item  {{ Request::is('add-conger') ? 'active':''}} ">
           <a class="nav-link" href="{{ url('add-conger')}}">
-            <i class="material-icons"> add</i>
+            <i class="material-icons"> add_box</i>
             <p>Faire Demande</p>
           </a>
         </li>
@@ -28,6 +28,13 @@
           <a class="nav-link" href="{{ url('conger') }}">
             <i class="material-icons">content_paste</i>
             <p>Status</p>
+          </a>  
+        </li>
+
+        <li class="nav-item {{ Request::is('feries') ? 'active':''}}">
+          <a class="nav-link" href="{{ url('feries') }}">
+            <i class="material-icons">assignment</i>
+            <p>Jours Fériés</p>
           </a>  
         </li>
 

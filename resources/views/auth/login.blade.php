@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>H2C Devlopment</title>
+	<title>H2C Development</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -33,9 +33,9 @@
                 <form method="POST" action="{{ route('login') }}" class="login100-form validate-form">
                     @csrf
                     
-                    <div class="login100-form">Bienvenu!</div>
+                    <div class="login100-form"> <u style="font-size: 70px">H2C</u> Development  </div>
 					
-                    <span class="login100-form-title">Connexion</span>
+                    <span class="login100-form-title">Bienvenue </span>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
                         
 						<input class="input100 @error('email') is-invalid @enderror" type="text" name="email" placeholder="Email">
@@ -51,7 +51,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100 @error('password') is-invalid @enderror" type="password" name="password" placeholder="Password">
+						<input class="input100 @error('password') is-invalid @enderror" type="password" name="password" placeholder="Mot de passe">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -65,24 +65,15 @@
 					
 					<div class="container-login100-form-btn">
 						<button type="submit" class="login100-form-btn">
-							Login
+							Connexion
 						</button>
 					</div>
 
-					<div class="text-center p-t-12">
-						<span class="txt1">
-							Forgot
-						</span>
-                        @if (Route::has('password.request'))
-                                    <a class="txt2" href="{{ route('password.request') }}">
-                                        {{ __('Forgot Your Password?') }}
-                                    </a>
-                        @endif
-					</div>
+					
 
 					<div class="text-center p-t-12">
 						<a class="txt1" href="{{ route('register') }}">
-							Create your Account
+							Créez votre compte
 							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
 						</a>
 					</div>

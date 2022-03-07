@@ -11,4 +11,9 @@ class FrontendController extends Controller
     {
         return view('admin.index');
     }
+
+    public function adferies()
+    {
+        return view('admin.feries');
+    }
 }

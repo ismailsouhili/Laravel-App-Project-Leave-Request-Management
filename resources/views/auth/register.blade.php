@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<title>H2C Devlopment</title>
+	<title>H2C Development</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 <!--===============================================================================================-->	
@@ -70,7 +70,7 @@
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input class="input100" type="password" name="password" placeholder="Password">
+						<input class="input100" type="password" name="password" placeholder="Mot de passe">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
@@ -83,7 +83,7 @@
 					</div>
 
                     <div class="wrap-input100 validate-input" data-validate = "Password is required">
-						<input id="password_confirmation" class="input100 " type="password" name="password_confirmation" placeholder="Password confirmer">
+						<input id="password_confirmation" class="input100 " type="password" name="password_confirmation" placeholder="Confirmation  mot de passe">
                         @error('password')
                         <span class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>

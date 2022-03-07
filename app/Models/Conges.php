@@ -13,6 +13,7 @@ class Conges extends Model
         'user_ID',
         'start',
         'end',
+        //'total_days',
         'type',
         'certificate',
         'status',

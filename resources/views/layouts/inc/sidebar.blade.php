@@ -12,7 +12,7 @@
         <li class="nav-item {{ Request::is('dashboard') ? 'active':''}}  ">
           <a class="nav-link" href="{{ url('dashboard')}}">
             <i class="material-icons">dashboard</i>
-            <p>Accueille</p>
+            <p>Accueil</p>
           </a>
         </li>
         <li class="nav-item  {{ Request::is('users') ? 'active':''}} ">
@@ -25,7 +25,7 @@
 
         <li class="nav-item {{ Request::is('add-user') ? 'active':''}}">
           <a class="nav-link" href="{{ url('add-user') }}">
-            <i class="material-icons">add</i>
+            <i class="material-icons">add_box</i>
             <p>Ajouter Employé</p>
           </a>  
         </li>
@@ -36,6 +36,13 @@
             <i class="material-icons">content_paste</i>
             <p>Décision de congé</p>
           </a>
+        </li>
+
+        <li class="nav-item {{ Request::is('adferies') ? 'active':''}}">
+          <a class="nav-link" href="{{ url('adferies') }}">
+            <i class="material-icons">assignment</i>
+            <p>Jours Fériés</p>
+          </a>  
         </li>
 
 

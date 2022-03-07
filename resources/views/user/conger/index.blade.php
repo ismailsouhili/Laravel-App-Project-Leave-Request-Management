@@ -26,7 +26,7 @@
                 <td>{{$item->start}}</td>
                 <td>{{$item->end}}</td>
                 <td>{{$item->type}}</td>
-                <td><a href="{{url('download/'.$item->certificate)}}" class="btn btn-dark ">Telecharger</a></td>
+                <td><a href="{{url('download/'.$item->certificate)}}" class="btn btn-outline-secondary">Telecharger</a></td>
                 <td>
                   <?php 
                   if($item->status=="Accepté")
