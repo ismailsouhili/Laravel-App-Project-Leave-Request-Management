@@ -27,7 +27,11 @@ class RegisterController extends Controller
     |
     */
 
-    use RegistersUsers;
+    //use RegistersUsers;
+
+    use RegistersUsers{
+        register as registration;
+      }
 
     /**
      * Where to redirect users after registration.
@@ -79,14 +83,14 @@ class RegisterController extends Controller
             'fname' => $data['fname'],
             'email' => $data['email'],
             'password' => Hash::make($data['password']),
-            //'google2fa_secret' => $data['google2fa_secret'],
+            'google2fa_secret' => $data['google2fa_secret'],
             //'holidays' => $data['holidays'],
            // 'start_work' => $data['start_work'],
            // 'salary' => $data['salary'],
         ]);
     }
 
-  /*  public function register(Request $request)
+    public function register(Request $request)
     {
         //Validate the incoming request using the already included validator method
         $this->validator($request->all())->validate();
@@ -120,11 +124,11 @@ class RegisterController extends Controller
         // add the session data back to the request input
         $request->merge(session('registration_data'));
 
+        //$request->all();
+
         // Call the default laravel authentication
         return $this->registration($request);
     }
-
-    */
-
+    
 
 }

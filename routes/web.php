@@ -34,7 +34,6 @@ Route::get('/','Auth\LoginController@index');
 
 Auth::routes();
 
-
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
 Route::middleware(['auth'],['isAdmin'])->group(function(){
@@ -79,5 +78,9 @@ Route::middleware(['auth'],['isAdmin'])->group(function(){
     Route::get('download/{id}','Admin\CongesController@download');
 
     Route::get('feries','User\UserDashController@feries');
+
+    // Google 2fA
+    Route::post('/complete-registration', 'Auth\RegisterController@completeRegistration');
+
 
     

@@ -25,7 +25,7 @@ class User extends Authenticatable
         'email',
         'password',
         'holidays',
-        //'google2fa_secret',
+        'google2fa_secret',
        // 'start_work',
        // 'salary',
     ];
@@ -38,7 +38,7 @@ class User extends Authenticatable
     protected $hidden = [
         'password',
         'remember_token',
-        //'google2fa_secret'
+        'google2fa_secret'
     ];
 
     /**

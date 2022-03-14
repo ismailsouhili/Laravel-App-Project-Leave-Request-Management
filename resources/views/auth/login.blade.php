@@ -20,6 +20,34 @@
 	<link rel="stylesheet" type="text/css" href="{{asset('loginpage/css/util.css')}}">
 	<link rel="stylesheet" type="text/css" href="{{asset('loginpage/css/main.css')}}">
 <!--===============================================================================================-->
+
+<!--for logo H2C-->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/2.0.2/anime.min.js"></script>
+
+
+<style> 
+    #myDIV {
+    animation: mymove 10s infinite;
+    }
+
+    @keyframes mymove {
+    50% {text-shadow: 10px 20px 80px  #1E90FF;}
+    }
+
+    .ml13{
+    font-size: 1.9em;
+    text-transform:none;
+    letter-spacing: 0.5em;
+    font-weight: 600;
+    }
+
+    .ml13 .letter{
+    display:ruby-base;
+    line-height: 1em;
+    }
+    </style>
+    
+
 </head>
 <body>
 	
@@ -33,7 +61,7 @@
                 <form method="POST" action="{{ route('login') }}" class="login100-form validate-form">
                     @csrf
                     
-                    <div class="login100-form"> <u style="font-size: 70px">H2C</u> Development  </div>
+                    <div class="login100-form " id="myDIV"> <div style="font-size: 70px" id="myDIV" class="ml13">H2C  </div  > Development  </div>
 					
                     <span class="login100-form-title">Bienvenue </span>
 					<div class="wrap-input100 validate-input" data-validate = "Valid email is required: ex@abc.xyz">
@@ -84,6 +112,30 @@
 	</div>
 	
 	
+    <script>
+        // Wrap every letter in a span
+        var textWrapper = document.querySelector('.ml13');
+        textWrapper.innerHTML = textWrapper.textContent.replace(/\S/g, "<span class='letter'>$&</span>");
+
+        anime.timeline({loop: true})
+        .add({
+            targets: '.ml13 .letter',
+            translateY: [100,0],
+            translateZ: 0,
+            opacity: [0,1],
+            easing: "easeOutExpo",
+            duration: 2000,
+            delay: (el, i) => 300 + 30 * i
+        }).add({
+            targets: '.ml13 .letter',
+            translateY: [0,-100],
+            opacity: [1,0],
+            easing: "easeInExpo",
+            duration: 1200,
+            delay: (el, i) => 100 + 30 * i
+        });
+
+    </script>
 
 	
 <!--===============================================================================================-->	
