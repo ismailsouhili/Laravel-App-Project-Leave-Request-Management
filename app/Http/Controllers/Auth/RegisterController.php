@@ -10,7 +10,6 @@ use Illuminate\Support\Facades\Hash;
 
 use Illuminate\Http\Request;
 
-use PragmaRX\Google2FA\Google2FA;
 
 use Illuminate\Support\Facades\Validator;
 

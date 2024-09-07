@@ -175,7 +175,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         Barryvdh\DomPDF\ServiceProvider::class,
-        PragmaRX\Google2FALaravel\ServiceProvider::class,
+        //PragmaRX\Google2FALaravel\ServiceProvider::class,
 
        // SimpleSoftwareIO\QrCode\QrCodeServiceProvider::class,
 
@@ -234,7 +234,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         "PDF" => Barryvdh\DomPDF\Facade::class,
-        'Google2FA' => PragmaRX\Google2FALaravel\Facade::class,
+        //'Google2FA' => PragmaRX\Google2FALaravel\Facade::class,
 
     ],
 
