@@ -7,7 +7,8 @@
         "watch-poll": "mix watch -- --watch-options-poll=1000",
         "hot": "mix watch --hot",
         "prod": "npm run production",
-        "production": "mix --production"
+        "production": "mix --production",
+        "build": "npm run production"
     },
     "devDependencies": {
         "@babel/preset-react": "^7.13.13",
@@ -33,4 +34,7 @@
         "react-bootstrap": "^2.1.1",
         "react-router": "^6.2.1"
     }
+
+    
 }
+
